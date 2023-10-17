@@ -57,6 +57,10 @@ class xtk:
             self.x = 1
             self.tek = self.BnraBo
             self.ahem = self.ahem + 1
+        elif ran[py.K_z] == True:
+            a = open('zzz', 'w')
+            a.write(str(self.kbadrat.x)+', '+str(self.kbadrat.y))
+            a.close()
         self.kbadrat.y = self.kbadrat.y + self.y
         self.kbadrat.x = self.kbadrat.x + self.x
         if self.ahem == 4:
