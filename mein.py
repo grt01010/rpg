@@ -1,6 +1,7 @@
 import pygame as py
 import spraet as sp
 import karta as ka
+import seting as se
 
 okHo = py.display.set_mode([1000, 700])
 s = 0
