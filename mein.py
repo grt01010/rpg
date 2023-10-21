@@ -10,6 +10,7 @@ karta = ka.Karta()
 
 while s == 0:
     okHo.fill([0,0,0])
+    karta.res(okHo)
     igrok.dBio()
     igrok.res(okHo)
     a=py.event.get()
