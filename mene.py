@@ -1,9 +1,10 @@
 import PySimpleGUI as ps
+
 wit = [
-    [ps.Text('ведите имя'),ps.InputText()],
-    [ps.Text('размер плиток'),ps.OptionMenu([16,32,48,64,])],
-    [ps.Text('выбор управлением'),ps.Radio('a,w,d,s',group_id=1),ps.Radio('стрелки',group_id=1)],
-    [ps.InputText(),ps.ColorChooserButton('цвет')],
+    [ps.Text('ведите имя'),ps.InputText(key='имя')],
+    [ps.Text('размер плиток'),ps.OptionMenu([16,32,48,64,],key='размер плиток')],
+    [ps.Text('выбор управлением'),ps.Radio('a,w,d,s',group_id=1,key='выбор управлением'),ps.Radio('стрелки',group_id=1,key='выбор управлением2')],
+    [ps.InputText(key='цвет'),ps.ColorChooserButton('цвет')],
     [ps.Button('старт'),ps.Button('выход')]
 
 ]
