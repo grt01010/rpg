@@ -1,4 +1,5 @@
 import pygame as py
+import seting as se
 
 class xtk:
     def __init__(self):
@@ -15,22 +16,26 @@ class xtk:
         a4 = 0
         self.ahem = 0
         for dota in range(4):
-            e = self.s.subsurface(a, 0, 32, 32)
+            e = self.s.subsurface(a, 0, se.IGROKSTARA, se.IGROKSTARA)
             a = a + 32
+            e = py.transform.scale(e,[se.IGROKANOBA, se.IGROKANOBA])
             self.BHuc.append(e)
         for dota in range(4):
-            e = self.s.subsurface(a2, 32, 32, 32)
+            e = self.s.subsurface(a2, 32, se.IGROKSTARA, se.IGROKSTARA)
             a2 = a2 + 32
+            e = py.transform.scale(e,[se.IGROKANOBA, se.IGROKANOBA])
             self.BleBo.append(e)
         for dota in range(4):
-            e = self.s.subsurface(a3, 64, 32, 32)
+            e = self.s.subsurface(a3, 64, se.IGROKSTARA, se.IGROKSTARA)
             a3 = a3 + 32
+            e = py.transform.scale(e,[se.IGROKANOBA, se.IGROKANOBA])
             self.BnraBo.append(e)
         for dota in range(4):
-            e = self.s.subsurface(a4, 96, 32, 32)
+            e = self.s.subsurface(a4, 96, se.IGROKSTARA, se.IGROKSTARA)
             a4 = a4 + 32
+            e = py.transform.scale(e,[se.IGROKANOBA, se.IGROKANOBA])
             self.Berx.append(e)
-        self.kbadrat = py.Rect(100, 20, 32, 32)
+        self.kbadrat = py.Rect(100, 20, se.IGROKANOBA, se.IGROKANOBA)
         self.tek = self.BHuc
 
     
