@@ -28,9 +28,9 @@ class Karta:
                 plitka = Plitka(self.spisok_kartinok[nomer], x * se.PLITKANOBA, y * se.PLITKANOBA, nomer)
                 self.plitki.append(plitka)
 
-    def res(self, okHo):
+    def res(self, okHo, kamera):
         for plitka in self.plitki:
-            plitka.res(okHo)
+            plitka.res(okHo, kamera)
                 
 
 class Plitka:
@@ -39,5 +39,8 @@ class Plitka:
         self.kbadrat = py.Rect(x, y, se.PLITKANOBA, se.PLITKANOBA)
         self.nomer = nomer
 
-    def res(self, okHo):
-        okHo.blit(self.kartinka, self.kbadrat)
+    def res(self, okHo, kamera):
+        kbadratnob = py.Rect(self.kbadrat.x + kamera.x , self.kbadrat.y + kamera.y, se.PLITKANOBA, se.PLITKANOBA)
+        okHo.blit(self.kartinka, kbadratnob)
+
+
