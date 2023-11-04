@@ -1,5 +1,8 @@
 import mene as me
 
+RACMERX = 1000
+RACMERY = 700
+
 PLITKASTARA = 16
 PLITKANOBA = int(me.fg['размер плиток'])
 IGROKSTARA = 32

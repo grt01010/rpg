@@ -4,7 +4,7 @@ import karta as ka
 import seting as se
 import kamera as kam
 
-okHo = py.display.set_mode([1000, 700])
+okHo = py.display.set_mode([se.RACMERX, se.RACMERY])
 s = 0
 
 igrok = sp.xtk()
@@ -17,7 +17,7 @@ while s == 0:
     karta.res(okHo, kamera)
     kamera.cle()
     igrok.dBio()
-    igrok.res(okHo)
+    igrok.res(okHo, kamera)
     a=py.event.get()
     for e in a:
         if e.type == py.QUIT:

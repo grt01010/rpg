@@ -39,27 +39,30 @@ class xtk:
         self.tek = self.BHuc
 
     
-    def res(self, okHo):
-        okHo.blit(self.tek[self.ahem], self.kbadrat)
+    def res(self, okHo, kamera):
+        kbadratnob = py.Rect(self.kbadrat.x + kamera.x , self.kbadrat.y + kamera.y, se.IGROKANOBA, se.IGROKANOBA)
+        okHo.blit(self.tek[self.ahem], kbadratnob)
+
+
 
     def dBio(self):
         ran = py.key.get_pressed()
         self.y = 0
         self.x = 0
         if ran[py.K_s] == True:
-            self.y = 1
+            self.y = 5
             self.tek = self.BHuc
             self.ahem = self.ahem + 1
         elif ran[py.K_a] == True:
-            self.x = -1
+            self.x = -5
             self.tek = self.BleBo
             self.ahem = self.ahem + 1
         elif ran[py.K_w] == True:
-            self.y = -1
+            self.y = -5
             self.ahem = self.ahem + 1
             self.tek = self.Berx
         elif ran[py.K_d] == True:
-            self.x = 1
+            self.x = 5
             self.tek = self.BnraBo
             self.ahem = self.ahem + 1
         elif ran[py.K_z] == True:
