@@ -13,6 +13,9 @@ class Karta:
         self.podelit_kartinki()
         self.plitki = []
         self.sozdanie_plitok()
+        self.shir = len(self.spisokcsv[0])*se.PLITKANOBA
+
+
 
     def podelit_kartinki(self):
         for y in range(0, 8):
