@@ -15,7 +15,7 @@ kamera = kam.Kamera(igrok)
 while s == 0:
     okHo.fill([0,0,0])
     karta.res(okHo, kamera)
-    kamera.cle()
+    kamera.cle(karta.shir, karta.vis)
     igrok.dBio()
     igrok.res(okHo, kamera)
     a=py.event.get()
