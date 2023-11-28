@@ -37,15 +37,22 @@ class xtk:
             self.Berx.append(e)
         self.kbadrat = py.Rect(100, 20, se.IGROKANOBA, se.IGROKANOBA)
         self.tek = self.BHuc
+        self.kbadbyd = py.Rect(self.kbadrat.x+self.x, self.kbadrat.y+self.y, se.IGROKANOBA, se.IGROKANOBA)
 
     
     def res(self, okHo, kamera):
         kbadratnob = py.Rect(self.kbadrat.x + kamera.x , self.kbadrat.y + kamera.y, se.IGROKANOBA, se.IGROKANOBA)
         okHo.blit(self.tek[self.ahem], kbadratnob)
 
+    def stalk(self, bloki): 
+        for b in bloki:
+            if self.kbadbyd.colliderect(b.kbadrat) and b.nomer in se.WALL_IDS:
+                return True
+        return False
 
 
-    def dBio(self):
+    def dBio(self, bloki):
+        
         ran = py.key.get_pressed()
         self.y = 0
         self.x = 0
@@ -68,7 +75,10 @@ class xtk:
         elif ran[py.K_z] == True:
             a = open('zzz', 'w')
             a.write(str(self.kbadrat.x)+', '+str(self.kbadrat.y))
-            a.close()
+        self.kbadbyd = py.Rect(self.kbadrat.x+self.x, self.kbadrat.y+self.y, se.IGROKANOBA, se.IGROKANOBA)
+        if self.stalk(bloki):
+            self.y = 0
+            self.x = 0
         self.kbadrat.y = self.kbadrat.y + self.y
         self.kbadrat.x = self.kbadrat.x + self.x
         if self.ahem == 4:
