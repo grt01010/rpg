@@ -50,9 +50,12 @@ class xtk:
                 return True
         return False
 
+    def stalknps(self, nps):
+        if self.kbadbyd.colliderect(nps.kbadrat):
+            return True
+        return False
 
-    def dBio(self, bloki):
-        
+    def dBio(self, bloki, nps):
         ran = py.key.get_pressed()
         self.y = 0
         self.x = 0
@@ -76,7 +79,7 @@ class xtk:
             a = open('zzz', 'w')
             a.write(str(self.kbadrat.x)+', '+str(self.kbadrat.y))
         self.kbadbyd = py.Rect(self.kbadrat.x+self.x, self.kbadrat.y+self.y, se.IGROKANOBA, se.IGROKANOBA)
-        if self.stalk(bloki):
+        if self.stalk(bloki) or self.stalknps(nps):
             self.y = 0
             self.x = 0
         self.kbadrat.y = self.kbadrat.y + self.y
