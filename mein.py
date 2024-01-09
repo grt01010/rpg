@@ -13,7 +13,7 @@ s = 0
 igrok = sp.xtk()
 karta = ka.Karta()
 npc = np.Npc(100, 500, karta.spisok_kartinok[120])
-
+esa= py.time.Clock()
 
 kamera = kam.Kamera(igrok)
 
@@ -25,9 +25,14 @@ while s == 0:
     igrok.dBio(karta.plitki, npc)
     igrok.res(okHo, kamera)
     npc.dbig(igrok)
+    h = str(esa.get_fps())
+
+    py.display.set_caption(h)
     
     a=py.event.get()
     for e in a:
         if e.type == py.QUIT:
             s = 1
     py.display.update()
+    sd = esa.tick(500)
+    print(sd)
