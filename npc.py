@@ -18,7 +18,7 @@ class Npc:
         if self.radom == 1:
             self.saob.ris(okHo, kamera)
 
-    def dbig(self, igrok):
+    def dbig(self, igrok, sd):
         a = igrok.kbadrat.x - self.kbadrat.x
         b = igrok.kbadrat.y - self.kbadrat.y
         c = ((a*a)+(b*b))**0.5
@@ -31,8 +31,10 @@ class Npc:
         else:
             self.radom = 0
             self.saob.a = 0
-        self.saob.kbadrat.x = self.kbadrat.x
-        self.saob.kbadrat.y = self.kbadrat.y
+            self.y = 0
+            self.x = 0
+        self.kbadrat.y = self.kbadrat.y + self.y*sd
+        self.kbadrat.x = self.kbadrat.x + self.x*sd
         if self.radom == 0:
             self.kbadrat.x=self.kbadrat.x+skx
             self.kbadrat.y=self.kbadrat.y+sky

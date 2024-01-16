@@ -16,15 +16,21 @@ npc = np.Npc(100, 500, karta.spisok_kartinok[120])
 esa= py.time.Clock()
 
 kamera = kam.Kamera(igrok)
+sd = 0
+pober = py.surface.Surface([10000000000000000000000000000000000000000000000000,10000000000000000000000000000000000000000000000000], py.SRCALPHA)
+ads=255
 
 while s == 0:
+    ads=ads-1
     okHo.fill([0,0,0])
     karta.res(okHo, kamera)
+    pober.fill([250,250,250,ads])
+    okHo.blit(pober,[1,1])
     npc.res(okHo, kamera)
     kamera.cle(karta.shir, karta.vis)
-    igrok.dBio(karta.plitki, npc)
+    igrok.dBio(karta.plitki, npc, sd)
     igrok.res(okHo, kamera)
-    npc.dbig(igrok)
+    npc.dbig(igrok,sd)
     h = str(esa.get_fps())
 
     py.display.set_caption(h)
@@ -34,5 +40,5 @@ while s == 0:
         if e.type == py.QUIT:
             s = 1
     py.display.update()
-    sd = esa.tick(500)
+    sd = esa.tick(60)
     print(sd)

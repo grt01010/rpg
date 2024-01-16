@@ -55,24 +55,24 @@ class xtk:
             return True
         return False
 
-    def dBio(self, bloki, nps):
+    def dBio(self, bloki, nps, sd):
         ran = py.key.get_pressed()
         self.y = 0
         self.x = 0
         if ran[py.K_s] == True:
-            self.y = 5
+            self.y = 0.1
             self.tek = self.BHuc
             self.ahem = self.ahem + 1
         elif ran[py.K_a] == True:
-            self.x = -5
+            self.x = -0.1
             self.tek = self.BleBo
             self.ahem = self.ahem + 1
         elif ran[py.K_w] == True:
-            self.y = -5
+            self.y = -0.1
             self.ahem = self.ahem + 1
             self.tek = self.Berx
         elif ran[py.K_d] == True:
-            self.x = 5
+            self.x = 0.1
             self.tek = self.BnraBo
             self.ahem = self.ahem + 1
         elif ran[py.K_z] == True:
@@ -82,7 +82,7 @@ class xtk:
         if self.stalk(bloki) or self.stalknps(nps):
             self.y = 0
             self.x = 0
-        self.kbadrat.y = self.kbadrat.y + self.y
-        self.kbadrat.x = self.kbadrat.x + self.x
+        self.kbadrat.y = self.kbadrat.y + self.y*sd
+        self.kbadrat.x = self.kbadrat.x + self.x*sd
         if self.ahem == 4:
                 self.ahem = 0
